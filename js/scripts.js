@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 
       //orderSummary();
-      priceCalculator(pizzaSize, totalToppings);
+      priceCalculator(sizeIn, totalToppings);
 
 
 
@@ -40,15 +40,14 @@ $(document).ready(function() {
         for(var i = 0; i < numOfToppings; i++){
           toppingsPrice += .75;
         }
-        //alert(toppingsPrice);
 
         var baseToppingCost = parseFloat("1.00");
-        if(size === "small"){
-          sizePrice = sizePrice;
-        }else if(size === "medium"){
+        if(size === 2){
           sizePrice += 2;
-        }else{
+        }else if(size === 3){
           sizePrice += 4;
+        }else{
+          sizePrice = sizePrice;
         }
 
         totalCost = sizePrice + toppingsPrice;
@@ -64,6 +63,7 @@ $(document).ready(function() {
       }
 
       function getPizzaSize(size) {
+
         var sizeOfPizza = "";
         if(size === 1){
           sizeOfPizza = "small";
@@ -143,6 +143,6 @@ $(document).ready(function() {
         return(actualToppings);
       }
 
-     $(".summary").show();
+     // $(".summary").show();
   });
 });
