@@ -10,8 +10,12 @@ $(document).ready(function() {
       var pizzaSize = pizzaSize();
 
       var amntPssblTppngs = 6;
+      var numberOfToppings = getToppingTotalVal();
 
-      var pizza01 = new Pizza ("pizzaSize",[]);
+      var pizza01 = new Pizza ("pizzaSize", numberOfToppings);
+
+      alert(pizza01.toppings);
+
 
       getToppingTotalVal();
 
@@ -19,9 +23,10 @@ $(document).ready(function() {
       //var finalSummary = orderSummary();
 /****************** FUNCTIONS ******************/
 
-      function Pizza(size, toppings) {
-        this.size= size;
+      function Pizza(size, toppings, AmountOfToppings,) {
+        this.size = size;
         this.toppings = toppings;
+        this.AmountOfToppings = AmountOfToppings;
       }
 
       function pizzaSize() {
@@ -65,11 +70,12 @@ $(document).ready(function() {
           if (top6){
             toppings.push("1");
           }
-          alert(toppings);
+          //alert(toppings);
           for (i=0; i<toppings.length; i++){
             totalToppings += 1;
           }
-          alert(totalToppings);
+          //alert(totalToppings);
+          return(totalToppings);
       }
 
       // alert(sizeIn);
