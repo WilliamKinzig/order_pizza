@@ -7,23 +7,23 @@ $(document).ready(function() {
       var totalToppings = getToppingTotalVal();
       var actualToppings = getActualToppings();
       var pizzaSize = getPizzaSize(sizeIn);
-
-
-
-
-      //orderSummary();
       priceCalculator(sizeIn, totalToppings);
+      var toppingsToString = getActualToppings.toString();
 
+      var array = [123,321];
+      var bob = actualToppings.join(", ");
+      //var arrayToSring = array.toString();
 
 
       var pizza01 = new Pizza(pizzaSize, actualToppings, totalToppings);
+
+
+      //alert(actualToppings);
+
+      //orderSummary();
       // alert(pizza01.size);
       // alert(pizza01.toppings);
       // alert(pizza01.amountOfToppings);
-
-
-
-
       //var finalSummary = orderSummary();
 
 
@@ -51,7 +51,7 @@ $(document).ready(function() {
         }
 
         totalCost = sizePrice + toppingsPrice;
-        alert(totalCost);
+        return(totalCost);
       }
 
 
@@ -104,7 +104,7 @@ $(document).ready(function() {
           if (top6){
             toppings.push("1");
           }
-          //alert(toppings);
+
           for (i=0; i<toppings.length; i++){
             totalToppings += 1;
           }
@@ -139,10 +139,12 @@ $(document).ready(function() {
         if (top6){
           actualToppings.push("Mushrooms")
         }
-        //alert(actualToppings);
         return(actualToppings);
       }
 
-     // $(".summary").show();
+    document.getElementById("insertb").innerHTML = bob;
+    document.getElementById("insert").innerHTML = priceCalculator(sizeIn, totalToppings);
+    $(".summary").show();
+    $(".summary2").show();
   });
 });

@@ -26,6 +26,13 @@
   border-color: red;
 }
 
+.summary2 {
+  margin: 15px;
+  display: none;
+  border: 3px;
+  border-color: red;
+}
+
 .container {
   border: 5px solid #0a3859;
   background-color: #ffe96d;
