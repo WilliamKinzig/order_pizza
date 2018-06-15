@@ -2,29 +2,21 @@ $(document).ready(function() {
   $("#button").click(function(){
     event.preventDefault();
 
-      //var option1 = parseInt($("input:radio[name=size]:checked").val());
-      //var option2 = parseInt($("input:radio[name=quesGroup02]:checked").val());
-      //var option3 = parseInt($("input:radio[name=quesGroup03]:checked").val());
-
       var sizeIn = parseInt($("input:radio[name=size]:checked").val());
       var pizzaSize = pizzaSize();
 
-      var amntPssblTppngs = 6;
-      var numberOfToppings = getToppingTotalVal();
-
-      var pizza01 = new Pizza ("pizzaSize", numberOfToppings);
-
-      alert(pizza01.toppings);
-
+      //var amntPssblTppngs = getToppingTotalVal();
+      //var numberOfToppings = getToppingTotalVal();
+      //alert(amntPssblTppngs);
 
       getToppingTotalVal();
-
+      getActualToppings()
       //orderSummary();
       //var finalSummary = orderSummary();
 /****************** FUNCTIONS ******************/
 
-      function Pizza(size, toppings, AmountOfToppings,) {
-        this.size = size;
+      function Pizza(size, toppings, AmountOfToppings) {
+        this.size= size;
         this.toppings = toppings;
         this.AmountOfToppings = AmountOfToppings;
       }
@@ -45,13 +37,13 @@ $(document).ready(function() {
       function getToppingTotalVal(){
         var totalToppings = 0;
         var toppings = [];
-        //alert(totalToppings);
-          var top1 = parseInt($("input:radio[name=toppings1]:checked").val());
-          var top2 = parseInt($("input:radio[name=toppings2]:checked").val());
-          var top3 = parseInt($("input:radio[name=toppings3]:checked").val());
-          var top4 = parseInt($("input:radio[name=toppings4]:checked").val());
-          var top5 = parseInt($("input:radio[name=toppings5]:checked").val());
-          var top6 = parseInt($("input:radio[name=toppings6]:checked").val());
+
+        var top1 = $("input:radio[name=Cheese]:checked").val();
+        var top2 = $("input:radio[name=Pepperoni]:checked").val();
+        var top3 = $("input:radio[name=Italian_Sausage]:checked").val();
+        var top4 = $("input:radio[name=Jalupeno_Peppers]:checked").val();
+        var top5 = $("input:radio[name=Pineapple]:checked").val();
+        var top6 = $("input:radio[name=Mushrooms]:checked").val();
           if (top1){
             toppings.push("1");
           }
@@ -74,27 +66,41 @@ $(document).ready(function() {
           for (i=0; i<toppings.length; i++){
             totalToppings += 1;
           }
-          //alert(totalToppings);
+
           return(totalToppings);
       }
 
-      // alert(sizeIn);
-      // alert(pizzaSize);
 
-      // function orderSummary() {
-      //
-      //
-      //
-      //     var finalToppings = [];
+      function getActualToppings(){
+        var actualToppings = [];
+        var top1 = $("input:radio[name=Cheese]:checked").val();
+        var top2 = $("input:radio[name=Pepperoni]:checked").val();
+        var top3 = $("input:radio[name=Italian_Sausage]:checked").val();
+        var top4 = $("input:radio[name=Jalupeno_Peppers]:checked").val();
+        var top5 = $("input:radio[name=Pineapple]:checked").val();
+        var top6 = $("input:radio[name=Mushrooms]:checked").val();
 
-      //     for (var i = 0; i < toppings.length; i++) {
-      //       finalToppings.push('<span>' + array[i] + '</span>');
-      //     }
-      //
-      //     $("summary").html(finalToppings.join(""));
-      //
-      //   });
-      // }
+        if (top1){
+          actualToppings.push("Cheese");
+        }
+        if (top2){
+          actualToppings.push("Pepperoni")
+        }
+        if (top3){
+          actualToppings.push("Italian_Sausage");
+        }
+        if (top4){
+          actualToppings.push("Jalupeno_Peppers")
+        }
+        if (top5){
+          actualToppings.push("Pineapple");
+        }
+        if (top6){
+          actualToppings.push("Mushrooms")
+        }
+        alert(actualToppings);
+        return(actualToppings);
+      }
 
      $(".summary").show();
   });
