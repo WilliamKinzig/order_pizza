@@ -7,15 +7,15 @@ $(document).ready(function() {
       var totalToppings = getToppingTotalVal();
       var actualToppings = getActualToppings();
       var pizzaSize = getPizzaSize(sizeIn);
-      priceCalculator(sizeIn, totalToppings);
+      var cost = priceCalculator(sizeIn, totalToppings);
       var toppingsToString = getActualToppings.toString();
 
       var array = [123,321];
-      var bob = actualToppings.join(", ");
+      var toppings = actualToppings.join(", ");
       //var arrayToSring = array.toString();
 
 
-      var pizza01 = new Pizza(pizzaSize, actualToppings, totalToppings);
+      var pizza01 = new Pizza(pizzaSize, toppings, totalToppings, cost);
 
 
       //alert(actualToppings);
@@ -34,14 +34,15 @@ $(document).ready(function() {
       function priceCalculator(size, numOfToppings){
 
         var sizePrice = 5;
-        var totalCost;
-
+        var totalCost
         var toppingsPrice = 1;
+
         for(var i = 0; i < numOfToppings; i++){
           toppingsPrice += .75;
         }
 
         var baseToppingCost = parseFloat("1.00");
+
         if(size === 2){
           sizePrice += 2;
         }else if(size === 3){
@@ -56,10 +57,11 @@ $(document).ready(function() {
 
 
 
-      function Pizza(size, toppings, amountOfToppings) {
+      function Pizza(size, toppings, amountOfToppings, price) {
         this.size= size;
         this.toppings = toppings;
         this.amountOfToppings = amountOfToppings;
+        this.price = price;
       }
 
       function getPizzaSize(size) {
@@ -142,10 +144,9 @@ $(document).ready(function() {
         return(actualToppings);
       }
 
-    $('.results').html("$" + priceCalculator());
-    $('.resultsSize').html(getPizzaSize(sizeIn));
-    document.getElementById("insertb").innerHTML = bob;
-    //document.getElementById("insert").innerHTML = priceCalculator(sizeIn, totalToppings);
+    $('.results').html("$" + pizza01.price);
+    $('.resultsSize').html(pizza01.size);
+    $('.resultsToppings').html(pizza01.toppings);
     $(".summary").show();
     $(".summary2").show();
   });
