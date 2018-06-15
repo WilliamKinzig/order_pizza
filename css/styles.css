@@ -13,7 +13,7 @@
 
 .group01{
   border: 5px solid #0a3859;
-  background-color: #ebf4f1;
+  background-color: #ffe5bf;
   padding: 5px;
   margin: 15px;
   background-color: light green;
@@ -28,7 +28,7 @@
 
 .container {
   border: 5px solid #0a3859;
-  /* background-color: #edf1f7; */
+  background-color: #ffe96d;
   border-style: groove;
   padding: 15px;
   margin: 20px;
@@ -36,7 +36,7 @@
 
 .container2 {
   border: 5px solid #0a3859;
-  background-color: #edf1f7;
+  background-color: #fcb155;
   border-style: groove;
   padding: 15px;
   margin: 20px;
