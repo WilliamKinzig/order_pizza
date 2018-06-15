@@ -14,6 +14,24 @@ $(document).ready(function() {
 
 
 
+      //toppings.push(option1);
+
+
+      // function orderSummary() {
+      //   $('document').ready(function () {
+      //
+      //     toppings = ['london', 'ontario', 'san francisco', 'new york'];
+      //     var finalToppings = [];
+      //     for (var i = 0; i < toppings.length; i++) {
+      //       finalToppings.push('<span>' + array[i] + '</span>');
+      //     }
+      //
+      //     $("summary").html(finalToppings.join(""));
+      //
+      //   });
+      // }
+
+
      $(".summary").show();
   });
 });
