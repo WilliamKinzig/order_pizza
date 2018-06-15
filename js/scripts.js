@@ -4,27 +4,44 @@ $(document).ready(function() {
 
       var sizeIn = parseInt($("input:radio[name=size]:checked").val());
 
-
-      //var amntPssblTppngs = getToppingTotalVal();
-      //var numberOfToppings = getToppingTotalVal();
-      //alert(amntPssblTppngs);
-
       var totalToppings = getToppingTotalVal();
       var actualToppings = getActualToppings();
       var pizzaSize = getPizzaSize(sizeIn);
 
 
 
+
       //orderSummary();
+      //priceCalculator(pizzaSize, totalToppings);
+
+
 
       var pizza01 = new Pizza(pizzaSize, actualToppings, totalToppings);
-      alert(pizza01.size);
-      alert(pizza01.toppings);
-      alert(pizza01.amountOfToppings);
+      // alert(pizza01.size);
+      // alert(pizza01.toppings);
+      // alert(pizza01.amountOfToppings);
+
+
+
 
       //var finalSummary = orderSummary();
 
+
+
+
+
 /****************** FUNCTIONS ******************/
+
+      function priceCalculator(size, numOfToppings){
+
+        
+
+        var cost;
+
+
+
+      }
+
 
       function Pizza(size, toppings, amountOfToppings) {
         this.size= size;
@@ -111,10 +128,6 @@ $(document).ready(function() {
         //alert(actualToppings);
         return(actualToppings);
       }
-
-
-
-
 
      $(".summary").show();
   });
