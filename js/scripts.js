@@ -74,7 +74,7 @@ $(document).ready(function() {
           sizeOfPizza = "medium";
         }else if(size === 3){
           sizeOfPizza = "large";
-        }else alert("pick a size for you pizza");
+        }else alert("Please select a size");
         //alert(sizeOfPizza);
         return sizeOfPizza;
       }
@@ -131,10 +131,10 @@ $(document).ready(function() {
           actualToppings.push("Pepperoni")
         }
         if (top3){
-          actualToppings.push("Italian_Sausage");
+          actualToppings.push("Italian Sausage");
         }
         if (top4){
-          actualToppings.push("Jalupeno_Peppers")
+          actualToppings.push("Jalapenos Peppers")
         }
         if (top5){
           actualToppings.push("Pineapple");

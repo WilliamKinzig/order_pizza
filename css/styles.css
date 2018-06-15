@@ -1,19 +1,20 @@
 
 
-#header{
+.header{
   text-align: center;
-  color: red;
+  color: #591500;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 40px;
 }
 
 #button {
-  margin: 40px;
+  padding: 15px;
+  margin: 20px;
 }
 
 .group01{
   border: 5px solid #0a3859;
-  background-color: #ffe5bf;
+  background-color: #f9cb9d;
   padding: 5px;
   margin: 15px;
   background-color: light green;
