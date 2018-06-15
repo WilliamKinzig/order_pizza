@@ -3,34 +3,45 @@ $(document).ready(function() {
     event.preventDefault();
 
       var sizeIn = parseInt($("input:radio[name=size]:checked").val());
-      var pizzaSize = pizzaSize();
+
 
       //var amntPssblTppngs = getToppingTotalVal();
       //var numberOfToppings = getToppingTotalVal();
       //alert(amntPssblTppngs);
 
-      getToppingTotalVal();
-      getActualToppings()
+      var totalToppings = getToppingTotalVal();
+      var actualToppings = getActualToppings();
+      var pizzaSize = getPizzaSize(sizeIn);
+
+
+
       //orderSummary();
+
+      var pizza01 = new Pizza(pizzaSize, actualToppings, totalToppings);
+      alert(pizza01.size);
+      alert(pizza01.toppings);
+      alert(pizza01.amountOfToppings);
+
       //var finalSummary = orderSummary();
+
 /****************** FUNCTIONS ******************/
 
-      function Pizza(size, toppings, AmountOfToppings) {
+      function Pizza(size, toppings, amountOfToppings) {
         this.size= size;
         this.toppings = toppings;
-        this.AmountOfToppings = AmountOfToppings;
+        this.amountOfToppings = amountOfToppings;
       }
 
-      function pizzaSize() {
+      function getPizzaSize(size) {
         var sizeOfPizza = "";
-        if(sizeIn === 1){
+        if(size === 1){
           sizeOfPizza = "small";
-        }else if(sizeIn === 2){
+        }else if(size === 2){
           sizeOfPizza = "medium";
-        }else if(sizeIn === 3){
+        }else if(size === 3){
           sizeOfPizza = "large";
-        }else //alert("pick a size for you pizza");
-        //pizzaSize();
+        }else alert("pick a size for you pizza");
+        //alert(sizeOfPizza);
         return sizeOfPizza;
       }
 
@@ -70,7 +81,6 @@ $(document).ready(function() {
           return(totalToppings);
       }
 
-
       function getActualToppings(){
         var actualToppings = [];
         var top1 = $("input:radio[name=Cheese]:checked").val();
@@ -98,9 +108,13 @@ $(document).ready(function() {
         if (top6){
           actualToppings.push("Mushrooms")
         }
-        alert(actualToppings);
+        //alert(actualToppings);
         return(actualToppings);
       }
+
+
+
+
 
      $(".summary").show();
   });
