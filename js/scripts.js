@@ -142,8 +142,10 @@ $(document).ready(function() {
         return(actualToppings);
       }
 
+    $('.results').html("$" + priceCalculator());
+    $('.resultsSize').html(getPizzaSize(sizeIn));
     document.getElementById("insertb").innerHTML = bob;
-    document.getElementById("insert").innerHTML = priceCalculator(sizeIn, totalToppings);
+    //document.getElementById("insert").innerHTML = priceCalculator(sizeIn, totalToppings);
     $(".summary").show();
     $(".summary2").show();
   });
