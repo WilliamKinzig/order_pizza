@@ -52,7 +52,8 @@ $(document).ready(function() {
         }
 
         totalCost = sizePrice + toppingsPrice;
-        return(totalCost);
+        totalCostFloat = totalCost.toFixed(2);
+        return(totalCostFloat);
       }
 
 
