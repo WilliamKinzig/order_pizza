@@ -11,17 +11,16 @@ $(document).ready(function() {
         this.toppings = toppings;
       }
 
-
-      //var sizeOfPizza = "";
       function pizzaSize() {
         var sizeOfPizza = "";
         if(sizeIn === 1){
           sizeOfPizza = "small";
         }else if(sizeIn === 2){
           sizeOfPizza = "medium";
-        }else {
+        }else if(sizeIn === 3){
           sizeOfPizza = "large";
-        }
+        }else alert("pick a size for you pizza");
+        //pizzaSize();
         return sizeOfPizza;
       }
 
